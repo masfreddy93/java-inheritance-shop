@@ -37,6 +37,7 @@ public class Catalogo {
 				System.out.println("Inserire dati per smartphone");
 				System.out.println("Codice: ");
 				int codice = sc.nextInt();
+				sc.nextLine();
 				System.out.println("Nome: ");
 				String nome = sc.nextLine();
 				System.out.println("Marca: ");
@@ -55,6 +56,7 @@ public class Catalogo {
 				System.out.println("Inserire dati per televisore");
 				System.out.println("Codice: ");
 				int codice = sc.nextInt();
+				sc.nextLine();
 				System.out.println("Nome: ");
 				String nome = sc.nextLine();
 				System.out.println("Marca: ");
@@ -76,6 +78,7 @@ public class Catalogo {
 				System.out.println("Inserire dati per cuffie");
 				System.out.println("Codice: ");
 				int codice = sc.nextInt();
+				sc.nextLine();
 				System.out.println("Nome: ");
 				String nome = sc.nextLine();
 				System.out.println("Marca: ");
@@ -84,6 +87,7 @@ public class Catalogo {
 				int prezzo = sc.nextInt();
 				System.out.println("Iva: ");
 				int iva = sc.nextInt();
+				sc.nextLine();
 				System.out.println("Colore: ");
 				String colore = sc.nextLine();
 				System.out.println("è wireless(true / false): ");
