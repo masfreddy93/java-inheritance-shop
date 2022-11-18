@@ -7,27 +7,13 @@ public class Catalogo {
 
 	public static void main(String[] args) {
 		
-//		Televisore t = new Televisore(72621, "tv", "samsung", 350, 20, 250, 170, 30, true);
-//		String res = t.toString();
-//		System.out.println("Televisore 1: " + res);
-//		
+
 		Scanner sc = new Scanner(System.in);
-		
-//		System.out.println("-------------");
-//		System.out.println("inserire dati per televisore");
-//		Televisore t2 = new Televisore(sc.nextInt(), sc.nextLine(), sc.nextLine(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), true);
-//		res = t2.toString();
-//		System.out.println("Televisore 2: " + res);
-		
-//		System.out.println("-------------");
-//		System.out.println("inserire dati per televisore");
-//		Prodotto p = new Televisore(sc.nextInt(), sc.nextLine(), sc.nextLine(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), true);
-//		res = p.toString();
-//		System.out.println("Televisore 2: " + res);
-		
 		Prodotto[] products= new Prodotto[3];
 		
+		
 		System.out.println("Catalogo prodotti");
+		
 		
 		for(int i = 0; i < products.length; i++) {
 			
@@ -44,28 +30,70 @@ public class Catalogo {
 			
 			System.out.println("-------------");
 			
+			
 			Prodotto p = null;
 
 			if(numScelto == 1) {
 				System.out.println("Inserire dati per smartphone");
-				p = new Smartphone(sc.nextInt(), sc.nextLine(), sc.nextLine(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt());
-				String res = p.toString();
-//				System.out.println("Smartphone: " + res);
+				System.out.println("Codice: ");
+				int codice = sc.nextInt();
+				System.out.println("Nome: ");
+				String nome = sc.nextLine();
+				System.out.println("Marca: ");
+				String marca = sc.nextLine();
+				System.out.println("Prezzo: ");
+				int prezzo = sc.nextInt();
+				System.out.println("Iva: ");
+				int iva = sc.nextInt();
+				System.out.println("Codice IMEI: ");
+				int codiceImei = sc.nextInt();
+				System.out.println("Memoria: ");
+				int memoria = sc.nextInt();
+				p = new Smartphone(codice, nome, marca, prezzo, iva, codiceImei, memoria);
+				
 			}else if(numScelto == 2) {
 				System.out.println("Inserire dati per televisore");
-				p= new Televisore(sc.nextInt(), sc.nextLine(), sc.nextLine(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextBoolean());
-				String res = p.toString();
-//				System.out.println("Smartphone: " + res);
+				System.out.println("Codice: ");
+				int codice = sc.nextInt();
+				System.out.println("Nome: ");
+				String nome = sc.nextLine();
+				System.out.println("Marca: ");
+				String marca = sc.nextLine();
+				System.out.println("Prezzo: ");
+				int prezzo = sc.nextInt();
+				System.out.println("Iva: ");
+				int iva = sc.nextInt();
+				System.out.println("Larghezza: ");
+				int larghezza = sc.nextInt();
+				System.out.println("Altezza: ");
+				int altezza = sc.nextInt();
+				System.out.println("Profondità: ");
+				int profondita = sc.nextInt();
+				System.out.println("è smart(true / false): ");
+				boolean smart = sc.nextBoolean();
+				p = new Televisore(codice, nome, marca, prezzo, iva, larghezza, altezza, profondita, smart);
 			}else {
 				System.out.println("Inserire dati per cuffie");
-				p = new Cuffie(sc.nextInt(), sc.nextLine(), sc.nextLine(), sc.nextInt(), sc.nextInt(), sc.nextLine(), sc.nextBoolean());
-				String res = p.toString();
-//				System.out.println("Smartphone: " + res);
+				System.out.println("Codice: ");
+				int codice = sc.nextInt();
+				System.out.println("Nome: ");
+				String nome = sc.nextLine();
+				System.out.println("Marca: ");
+				String marca = sc.nextLine();
+				System.out.println("Prezzo: ");
+				int prezzo = sc.nextInt();
+				System.out.println("Iva: ");
+				int iva = sc.nextInt();
+				System.out.println("Colore: ");
+				String colore = sc.nextLine();
+				System.out.println("è wireless(true / false): ");
+				boolean wireless = sc.nextBoolean();
+				p = new Cuffie(codice, nome, marca, prezzo, iva, colore, wireless);
 			}
 			
 			products[i] = p;
 			
-			
+			System.out.println("-------------");
 		}
 		
 		System.out.println(Arrays.toString(products));
