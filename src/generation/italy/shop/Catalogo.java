@@ -1,5 +1,6 @@
 package generation.italy.shop;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Catalogo {
@@ -24,38 +25,53 @@ public class Catalogo {
 //		res = p.toString();
 //		System.out.println("Televisore 2: " + res);
 		
+		Prodotto[] products= new Prodotto[3];
+		
 		System.out.println("Catalogo prodotti");
-		System.out.println("Cosa stai inserendo? Digita 1 per 'Smartphone', digita 2 per 'Televisore' o digita 3 per 'Cuffie'");
-		int numScelto = sc.nextInt();
-		System.out.println("Numero digitato: " + numScelto);
 		
-		if(numScelto == 1 || numScelto == 2 || numScelto == 3) {
-			System.out.println("Numero valido");
-		} else {
-			System.out.println("Hai inserito un numero non valido");
-		}
-		
-		
-		System.out.println("-------------");
+		for(int i = 0; i < products.length; i++) {
+			
+			System.out.println("Cosa stai inserendo? Digita 1 per 'Smartphone', digita 2 per 'Televisore' o digita 3 per 'Cuffie'");
+			int numScelto = sc.nextInt();
+			System.out.println("Numero digitato: " + numScelto);
+			
+			if(numScelto == 1 || numScelto == 2 || numScelto == 3) {
+				System.out.println("Numero valido");
+			} else {
+				System.out.println("Hai inserito un numero non valido");
+			}
+			
+			
+			System.out.println("-------------");
+			
+			Prodotto p = null;
 
-		if(numScelto == 1) {
-			System.out.println("Inserire dati per smartphone");
-			Prodotto p = new Smartphone(sc.nextInt(), sc.nextLine(), sc.nextLine(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt());
-			String res = p.toString();
-			System.out.println("Smartphone: " + res);
-		}else if(numScelto == 2) {
-			System.out.println("Inserire dati per televisore");
-			Prodotto p= new Televisore(sc.nextInt(), sc.nextLine(), sc.nextLine(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextBoolean());
-			String res = p.toString();
-			System.out.println("Smartphone: " + res);
-		}else {
-			System.out.println("Inserire dati per cuffie");
-			Prodotto p = new Cuffie(sc.nextInt(), sc.nextLine(), sc.nextLine(), sc.nextInt(), sc.nextInt(), sc.nextLine(), sc.nextBoolean());
-			String res = p.toString();
-			System.out.println("Smartphone: " + res);
+			if(numScelto == 1) {
+				System.out.println("Inserire dati per smartphone");
+				p = new Smartphone(sc.nextInt(), sc.nextLine(), sc.nextLine(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt());
+				String res = p.toString();
+//				System.out.println("Smartphone: " + res);
+			}else if(numScelto == 2) {
+				System.out.println("Inserire dati per televisore");
+				p= new Televisore(sc.nextInt(), sc.nextLine(), sc.nextLine(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextBoolean());
+				String res = p.toString();
+//				System.out.println("Smartphone: " + res);
+			}else {
+				System.out.println("Inserire dati per cuffie");
+				p = new Cuffie(sc.nextInt(), sc.nextLine(), sc.nextLine(), sc.nextInt(), sc.nextInt(), sc.nextLine(), sc.nextBoolean());
+				String res = p.toString();
+//				System.out.println("Smartphone: " + res);
+			}
+			
+			products[i] = p;
+			
+			
 		}
+		
+		System.out.println(Arrays.toString(products));
 		
 		sc.close();
+		
 		
 		
 	}
